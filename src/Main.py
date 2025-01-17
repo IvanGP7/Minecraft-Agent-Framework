@@ -64,6 +64,7 @@ while fin == False:
             mc.postToChat("Dinamita")
             explosion_TNT()
             chatPost = 0 # Reseteamos el chatpost
+            mc.events.clearAll()
             
         elif chatPost.message.lower() == "2":
             mc.postToChat("--Falta Por definir--")
