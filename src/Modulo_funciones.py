@@ -15,3 +15,4 @@ def insult_bot(indice):
         mc.postToChat(lista_insultos[indice-1])
     else:
         print("Se ha intentado escribir el insulto " + str(indice) + ", cuando solo tenemos " + str(len(lista_insultos)) + " elementos en la lista.")
+        
