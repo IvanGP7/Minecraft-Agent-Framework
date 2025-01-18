@@ -1,4 +1,10 @@
+
+from Acciones.lectura_chat import *
+from Acciones.textos import menu_insult
 import mcpi.minecraft as minecraft
+import random
+
+
 mc = minecraft.Minecraft.create("localhost")
 
 lista_insultos = ["BOBO", "ZOQUETE", "GILIPOLLAS", "INEPTO", "MONONEURONAL", "RETRASADO"]
@@ -7,7 +13,12 @@ lista_insultos = ["BOBO", "ZOQUETE", "GILIPOLLAS", "INEPTO", "MONONEURONAL", "RE
 def add_insulto(insulto):
     if insulto not in lista_insultos:
         lista_insultos.append(insulto)
+        mc.postToChat("Se ha incluido a la lista: %s" %str(insulto))
         print(str(insulto) + " Se ha añadido a la lista de insultos global.")
+    else:
+        mc.postToChat("Este insulto ya existe en la lista")
+        print(str(insulto) + " Ya existe dentro de la lista.")
+
 
 # Función para Escribir por chat un insulto a través de un índice.
 def print_insult(indice):
@@ -24,13 +35,28 @@ def print_insult(indice):
 #
 def insult_bot():
     
-    mc.postToChat("Elige opciones del bot de insultos")
-    
-    chatPost = 0
-    mc.events.pollChatPosts().clear()
-
-    salida = False
-    while salida == False:
+    trobat = False
+    while trobat == False:
         
-        for chatPost in mc.events.pollChatPosts():
-            decision = int(chatPost.message.lower())
+        menu_insult()
+        valor = int(Lectura_chat())
+        
+        if valor == 1:
+            mc.postToChat("Escribe tu insulto:")
+            insulto = str(Lectura_chat())
+            add_insulto(insulto)
+        
+        if valor == 2:
+            indice = random.randint(1, len(lista_insultos))
+            print_insult(indice)
+            
+        if valor == 3:
+            i=0
+            for posicion in lista_insultos:
+                mc.postToChat("%s" %lista_insultos[i])
+                i += 1
+        
+        if valor == 4:
+            trobat = True
+        
+        

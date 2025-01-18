@@ -32,32 +32,30 @@ while fin == False:
         
         if chatPost.message.lower() == "0":
             mc.postToChat("Test")
-            mc.events.clearAll()
+            
                         
         elif chatPost.message.lower() == "1":
             mc.postToChat("Dinamita")
             explosion_TNT()
-            print_Menu_Acciones() 
-            mc.events.clearAll() # Limpiamos la lista para no acumular registros
             
         elif chatPost.message.lower() == "2":
-            mc.postToChat("--Falta Por definir--")
-            mc.events.clearAll() # Limpiamos la lista para no acumular registros
+            mc.postToChat("Insultos")
+            insult_bot()
                           
         elif chatPost.message.lower() == "3":
             mc.postToChat("--Falta Por definir--")
-            mc.events.clearAll() # Limpiamos la lista para no acumular registros
                           
         elif chatPost.message.lower() == "4":
             mc.postToChat("--Falta Por definir--")
-            mc.events.clearAll() # Limpiamos la lista para no acumular registros
                                       
         elif chatPost.message.lower() == "5":
-            mc.postToChat("--Falta Por definir--")
-            mc.events.clearAll() # Limpiamos la lista para no acumular registros
-                                            
+            mc.postToChat("--Falta Por definir--")                                            
                               
         elif chatPost.message.lower() == '10':
             mc.postToChat("Salida del Bot")
             fin = True
-            mc.events.clearAll()
+            break
+
+        mc.events.clearAll() # Limpiamos la lista para no acumular registros
+        print_Menu_Acciones() 
+        
