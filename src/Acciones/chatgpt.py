@@ -2,10 +2,13 @@
 from Acciones.lectura_chat import *
 from Acciones.textos import menu_insult
 import time
+import os
 
 import openai 
 
 import mcpi.minecraft as minecraft
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 mc = minecraft.Minecraft.create("localhost")
