@@ -3,11 +3,15 @@ from Acciones.lectura_chat import *
 from Acciones.textos import menu_insult
 import time
 import os
+from dotenv import load_dotenv
 
 import openai 
 
 import mcpi.minecraft as minecraft
 
+
+# Cargar las variables del archivo .env
+load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 

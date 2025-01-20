@@ -7,6 +7,9 @@ El propósito de esta práctica es interactuar con el mundo de **Minecraft** uti
 
 1. Asegurar que el servidor esté instalado de: https://github.com/AdventuresInMinecraft/AdventuresInMinecraft-PC
 2. instalar mcpi desde consola bash: pip install mcpi
+    pip install python-dotenv
+    pip install openai==0.28
+
 4. Tener el Minecraft instalado
 3. Abrir minecraft con la versión 1.12 (Recomendación resolución 1024x768)
 5. Añadir un servidor en Minecraft en el apartado de multijugador con ip "localhost"
