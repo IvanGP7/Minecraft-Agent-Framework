@@ -1,6 +1,5 @@
 
 from Acciones.lectura_chat import *
-from Acciones.textos import menu_insult
 import time
 import os
 from dotenv import load_dotenv
