@@ -6,8 +6,9 @@ El propósito de esta práctica es interactuar con el mundo de **Minecraft** uti
 ## Pasos para la instalación y configuración:
 
 1. Asegurar que el servidor esté instalado de:
-```
-git clone https://github.com/AdventuresInMinecraft/AdventuresInMinecraft-PC
+    ```bash
+    git clone https://github.com/AdventuresInMinecraft/AdventuresInMinecraft-PC
+
 2. Instalaciones necesarias desde consola bash: 
 - pip install mcpi            --> Para hacer uso de las funciones del Minecraft.
 - pip install python-dotenv   --> Para asginar variables de entorno en un archivo .env.
