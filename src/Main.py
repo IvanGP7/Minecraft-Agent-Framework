@@ -3,6 +3,8 @@ from Acciones.insult_bot import *
 from Acciones.textos import *
 from Acciones.dinamita import *
 from Acciones.chatgpt import *
+from Acciones.lectura_chat import *
+
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import time
@@ -25,45 +27,44 @@ informacion_basica()
 # Printar el Menu principal de actividades
 print_Menu_Acciones()
 
-chatPost = 0
-fin = False
-while fin == False:
-    
-    for chatPost in mc.events.pollChatPosts():
-        
-        if chatPost.message.lower() == "0":
-            mc.postToChat("Test")
-            print_Menu_Acciones()
-            
-                        
-        elif chatPost.message.lower() == "1":
-            mc.postToChat("Dinamita")
-            explosion_TNT()
-            print_Menu_Acciones()
-            
-        elif chatPost.message.lower() == "2":
-            mc.postToChat("Insultos")
-            insult_bot()
-            print_Menu_Acciones()
-                          
-        elif chatPost.message.lower() == "3":
-            mc.postToChat("ChatGPT")
-            ChatGPT()
-            print_Menu_Acciones()
-                          
-        elif chatPost.message.lower() == "4":
-            mc.postToChat("--Falta Por Crear--")
-            print_Menu_Acciones()
-                                      
-        elif chatPost.message.lower() == "5":
-            mc.postToChat("--Falta Por Crear--")
-            print_Menu_Acciones()                                             
-                              
-        elif chatPost.message.lower() == '10':
-            mc.postToChat("Salida del Bot")
-            fin = True
-            break
+salida = False
 
-        mc.events.clearAll() # Limpiamos la lista para no acumular registros
+while salida == False:
+    decision = Lectura_chat()
+
+    if decision == "0":
+        mc.postToChat("Test")
+        print_Menu_Acciones()
+        
+                    
+    elif decision == "1":
+        mc.postToChat("Dinamita")
+        explosion_TNT()
+        print_Menu_Acciones()
+        
+    elif decision == "2":
+        mc.postToChat("Insultos")
+        insult_bot()
+        print_Menu_Acciones()
+                        
+    elif decision == "3":
+        mc.postToChat("ChatGPT")
+        ChatGPT()
+        print_Menu_Acciones()
+                        
+    elif decision == "4":
+        mc.postToChat("--Falta Por Crear--")
+        print_Menu_Acciones()
+                                    
+    elif decision == "5":
+        mc.postToChat("--Falta Por Crear--")
+        print_Menu_Acciones()                                             
+                            
+    elif decision == "10":
+        mc.postToChat("Salida del Bot")
+        salida = True
+        break
+
+
         
         

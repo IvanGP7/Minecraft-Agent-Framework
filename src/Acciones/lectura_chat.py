@@ -4,7 +4,7 @@ mc = minecraft.Minecraft.create("localhost")
 
 def Lectura_chat():
 
-    chatPost = 0
+    chatPost = "0"
     mc.events.pollChatPosts().clear()
 
     salida = False

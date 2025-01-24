@@ -1,7 +1,12 @@
 # Minecraft Python Interaction with mcpi
 
 ## Objetivo
-El propósito de esta práctica es interactuar con el mundo de **Minecraft** utilizando la biblioteca **mcpi** en Python. A través de este entorno, controlaremos y modificaremos el juego directamente desde el código creando un Framework complentamente funcional.
+Desarrollar un framework en Minecraft, ejecutado en un servidor localhost, que permita implementar y gestionar funcionalidades interactivas utilizando Python y la librería MCPI. El objetivo principal es integrar características dinámicas que mejoren la experiencia dentro del juego, incluyendo:
+	1.	Creación de un conjunto de dinamitas para realizar explosiones de forma controlada en el entorno de Minecraft.
+	2.	Gestión de una lista de almacenamiento de insultos, proporcionando una funcionalidad para registrar y consultar elementos en tiempo real desde el juego.
+	3.	Implementación de una API conectada con ChatGPT, permitiendo realizar consultas y recibir respuestas directamente en el chat del juego.
+
+Adicionalmente, el framework hace uso de funciones clave como la impresión de menús interactivos en el chat y la lectura en tiempo real de las interacciones de los jugadores, fomentando una integración intuitiva entre el usuario y las herramientas desarrolladas.
 
 ## Pasos para la instalación y configuración:
 
@@ -23,12 +28,12 @@ El propósito de esta práctica es interactuar con el mundo de **Minecraft** uti
 3. Crear archivo .env en la carpeta src con la siguiente linea de codigo para conectar con la API del chatgpt, añadiendo la API_Key Personal:
     OPENAI_API_KEY="sk-..."
 
-4. Tener el Minecraft instalado
-5. Abrir minecraft con la versión 1.12 (Recomendación resolución 1024x768)
-6. Añadir un servidor en Minecraft en el apartado de multijugador con ip "localhost"
-7. Abrir la carpeta del servidor acceder a Server/ y ejecutar server.exe
-8. Entrar dentro del servidor desde el minecraft
-9. Ejecutar la Pracica desde el archivo Main.py
+4. Tener el Minecraft instalado.
+5. Abrir Minecraft con la versión 1.12 (Recomendación resolución 1024x768).
+6. Añadir un servidor en Minecraft en el apartado de Multijugador con ip "localhost".
+7. Abrir la carpeta del servidor acceder a Server/ y ejecutar server.exe.
+8. Entrar dentro del servidor recientemente creado desde Minecraft.
+9. Ejecutar el archivo Main.py para implementar el Framework.
 
 
 ## Control sobre el Código
@@ -53,8 +58,41 @@ Para controlar el código que tenemos y que ejecutamos podemos hacer un Coverage
         ```bash
         coverage report
 
+## Creación de un nuevo agente 
+
+Como este poryecto trata de ser un Framework hay que tener en cuenta que podemos añadir nuevos agentes o implementaciones de manera sencilla
+y comoda para el un usuario cualquiera.
+
+Ejemplo de nuevo agente:
+- Crear un nuevo archivo (teletransporte.py) en la carpeta Acciones, que es donde tenemos todos los Agentes.
+    #### **Contenido del Agente (teletransporte.py):**
+    ```python
+    import mcpi.minecraft as minecraft
+    import mcpi.block as block
+    import random
+
+    mc = minecraft.Minecraft.create("localhost")
+
+
+    def teleport():
+    pos = mc.player.getTilePos()
+        mc.player.setPos(random.randint((pos.x-10000), (pos.x+10000)), pos.y, random.randint((pos.z-10000), (pos.z+10000)))
+        
+- Añadir la función al archivo Main.py: 
+    #### **Contenido del Main.py:**
+    ```python
+    from Acciones.teletransporte import *
+
+- Añadir en el archivo Main.py la llamada a la función del nuevo Agente dentro del bucle que interactura con el jugador: 
+    #### **Contenido del Main.py:**
+    ```python
+    elif decision == "4":
+        mc.postToChat("Teletransporte")
+        teleport()
+        print_Menu_Acciones()
+
 ## Recomendación
 
 Guia para librería mcpi:
-https://www.stuffaboutcode.com/p/minecraft-api-reference.html
+https://www.stuffaboutcode.com/p/Minecraft-api-reference.html
 

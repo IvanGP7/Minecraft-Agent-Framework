@@ -1,6 +1,6 @@
+from Acciones.lectura_chat import *
 import mcpi.minecraft as minecraft
 import mcpi.block as block
-import time
 
 mc = minecraft.Minecraft.create("localhost")
 
@@ -17,29 +17,18 @@ def dinamita(size):
 def explosion_TNT():
     
     mc.postToChat(" ")
-    mc.postToChat("Elige un numero las dimensiones de la dinamita")
-    
-    chatPost = 0
-    mc.events.pollChatPosts().clear()
+    mc.postToChat("Elige un NUMERO las dimensiones de la dinamita")
 
-    salida = False
-    while salida == False:
+    num_bloques_tnt = int(Lectura_chat())
+    print("Numero de TNTs: ", num_bloques_tnt)
+    
+    if(num_bloques_tnt >= 0 and num_bloques_tnt < 11):
+        dinamita(num_bloques_tnt)
         
-        for chatPost in mc.events.pollChatPosts():
-            
-            num_bloques_tnt = int(chatPost.message.lower())
-            print("Numero de TNTs: ", num_bloques_tnt)
-            
-            if(num_bloques_tnt >= 0 and num_bloques_tnt < 11):
-                dinamita(num_bloques_tnt)
-                salida = True
-                chatPost = "0"
-                
-            if(num_bloques_tnt > 10):
-                mc.postToChat("Donde vas matado haciendo una dinamita de (%s)^3 Melon" %num_bloques_tnt)
-                salida = True
-                chatPost = "0"
-            
+    if(num_bloques_tnt > 10):
+        mc.postToChat("Donde vas matado haciendo una dinamita de (%s)^3 Melon" %num_bloques_tnt)
+
+
         
         
         
