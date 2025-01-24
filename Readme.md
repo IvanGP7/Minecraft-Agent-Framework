@@ -7,9 +7,9 @@ El propósito de esta práctica es interactuar con el mundo de **Minecraft** uti
 
 1. Asegurar que el servidor esté instalado de: https://github.com/AdventuresInMinecraft/AdventuresInMinecraft-PC
 2. Instalaciones necesarias desde consola bash: 
-pip install mcpi            --> Para hacer uso de las funciones del Minecraft
-pip install python-dotenv   --> Para asginar variables de entorno en un archivo .env
-pip install openai==0.28    --> Para hacer uso de la versión correcta del ChatGPT
+pip install mcpi            --> Para hacer uso de las funciones del Minecraft.
+pip install python-dotenv   --> Para asginar variables de entorno en un archivo .env.
+pip install openai==0.28    --> Para hacer uso de la versión correcta del ChatGPT.
 
 3. Crear archivo .env en la carpeta src con la siguiente linea de codigo para conectar con la API del chatgpt, añadiendo la API_Key Personal:
     OPENAI_API_KEY="sk-..."
