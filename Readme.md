@@ -93,6 +93,8 @@ Ejemplo de nuevo agente:
 
 ## Recomendación
 
-Guia para librería mcpi:
-https://www.stuffaboutcode.com/p/Minecraft-api-reference.html
+Guia para usar la librería mcpi para añadir mas Agentes al Framework:
+https://www.stuffaboutcode.com/p/minecraft-api-reference.html
+https://pimylifeup.com/minecraft-pi-edition-api-reference/
+
 
