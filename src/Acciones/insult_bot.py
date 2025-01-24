@@ -15,17 +15,27 @@ def add_insulto(insulto):
         lista_insultos.append(insulto)
         mc.postToChat("Se ha incluido a la lista: %s" %str(insulto))
         print(str(insulto) + " Se ha añadido a la lista de insultos global.")
+        return 0 # Insulto añadido correctamente
     else:
         mc.postToChat("Este insulto ya existe en la lista")
         print(str(insulto) + " Ya existe dentro de la lista.")
-
+        return 1 # Insulto ya existente
 
 # Función para Escribir por chat un insulto a través de un índice.
 def print_insult(indice):
     if indice <= len(lista_insultos):
         mc.postToChat(lista_insultos[indice-1])
+        return 0
     else:
         print("Se ha intentado escribir el insulto " + str(indice) + ", cuando solo tenemos " + str(len(lista_insultos)) + " elementos en la lista.")
+        return 1
+
+def print_lista_insultos():
+    i=0
+    for posicion in lista_insultos:
+        mc.postToChat("%s" %lista_insultos[i])
+        i += 1
+    return i # Devuelve el numero de insultos impresos 
 
 
 #
@@ -51,10 +61,7 @@ def insult_bot():
             print_insult(indice)
             
         if valor == 3:
-            i=0
-            for posicion in lista_insultos:
-                mc.postToChat("%s" %lista_insultos[i])
-                i += 1
+            print_lista_insultos()
         
         if valor == 4:
             trobat = True

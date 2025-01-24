@@ -12,8 +12,8 @@ def print_Menu_Acciones():
     mc.postToChat("1- Crear Dinamita")
     mc.postToChat("2- Chat Insultos")
     mc.postToChat("3- Conexion con chatGPT")
-    mc.postToChat("4- Falta por definir")
-    mc.postToChat("5- Falta por definir")
+    mc.postToChat("4- Falta por Crear")
+    mc.postToChat("5- Falta por Crear")
     mc.postToChat("10- Parar Script")
 
 def informacion_basica():

@@ -52,11 +52,11 @@ while fin == False:
             print_Menu_Acciones()
                           
         elif chatPost.message.lower() == "4":
-            mc.postToChat("--Falta Por definir--")
+            mc.postToChat("--Falta Por Crear--")
             print_Menu_Acciones()
                                       
         elif chatPost.message.lower() == "5":
-            mc.postToChat("--Falta Por definir--")
+            mc.postToChat("--Falta Por Crear--")
             print_Menu_Acciones()                                             
                               
         elif chatPost.message.lower() == '10':
