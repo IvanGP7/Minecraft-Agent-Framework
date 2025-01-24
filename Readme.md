@@ -39,12 +39,16 @@ Para Tener un control sobre el código creado tenemos unos test que son los arch
 
 
 Para controlar el código que tenemos y que ejecutamos podemos hacer un Coverage con:
-
-pip install coverage (Solo la primera vez)
-1. Coverage:
-2. cd ../Minecraft-Agent-Framework/src
-3. coverage run -m unittest Unit_Test.py
-4. coverage report
+(Solo la primera vez)
+    ```bash
+    pip install coverage 
+Coverage:
+    ```bash
+    cd ../Minecraft-Agent-Framework/src
+    ```bash
+    coverage run -m unittest Unit_Test.py
+    ```bash
+    coverage report
 
 ## Recomendación
 
