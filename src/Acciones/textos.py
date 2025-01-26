@@ -15,6 +15,7 @@ def print_Menu_Acciones():
     mc.postToChat("4- Falta por Crear")
     mc.postToChat("5- Falta por Crear")
     mc.postToChat("10- Parar Script")
+    return 0
 
 def informacion_basica():
     
@@ -29,7 +30,7 @@ def informacion_basica():
 
     for id in players_ids:
         mc.postToChat("Entidad : %s" %id)
-    
+    return 0
     
 def menu_insult():
     time.sleep(0.2)
@@ -39,3 +40,4 @@ def menu_insult():
     mc.postToChat("2- Ser insultado")
     mc.postToChat("3- Ver lista de insultos")
     mc.postToChat("4- Salir")
+    return 0

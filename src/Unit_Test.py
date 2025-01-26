@@ -2,6 +2,7 @@
 from Acciones.insult_bot import *
 from Acciones.dinamita import *
 from Acciones.chatgpt import *
+from Acciones.textos import *
 
 import unittest
 
@@ -36,6 +37,13 @@ class TestFunciones(unittest.TestCase):
         print("Contexión ha sido: ")
         self.assertNotEqual(preguntar_a_chatgpt("Dime tu numero favorito"), '\0')
 
+#
+# Testear si funciona los menus del archivo testos.py
+# 
+    def test_menus(self):
+        self.assertEqual(print_Menu_Acciones(), 0)
+        self.assertEqual(informacion_basica(), 0)
+        self.assertEqual(menu_insult(), 0)
 
 if __name__ == '__main__':
     unittest.main()
