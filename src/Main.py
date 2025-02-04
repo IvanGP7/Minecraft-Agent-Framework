@@ -4,6 +4,7 @@ from Acciones.textos import *
 from Acciones.dinamita import *
 from Acciones.chatgpt import *
 from Acciones.lectura_chat import *
+from Acciones.teleport import *
 
 import mcpi.minecraft as minecraft
 import mcpi.block as block
@@ -57,7 +58,8 @@ while salida == False:
         print_Menu_Acciones()
                                     
     elif decision == "5":
-        mc.postToChat("--Falta Por Crear--")
+        mc.postToChat("Teletransporte")
+        teleport()
         print_Menu_Acciones()                                             
                             
     elif decision == "10":

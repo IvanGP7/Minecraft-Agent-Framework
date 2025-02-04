@@ -13,7 +13,7 @@ def print_Menu_Acciones():
     mc.postToChat("2- Chat Insultos")
     mc.postToChat("3- Conexion con chatGPT")
     mc.postToChat("4- Falta por Crear")
-    mc.postToChat("5- Falta por Crear")
+    mc.postToChat("5- Teleport")
     mc.postToChat("10- Parar Script")
     return 0
 
@@ -39,5 +39,7 @@ def menu_insult():
     mc.postToChat("1- Incluir un insulto a la lista")
     mc.postToChat("2- Ser insultado")
     mc.postToChat("3- Ver lista de insultos")
-    mc.postToChat("4- Salir")
+    mc.postToChat("4- Imprimir insutos de longitud")
+    mc.postToChat("5- Imprimir lista en minuscuas")
+    mc.postToChat("6- Salir")
     return 0

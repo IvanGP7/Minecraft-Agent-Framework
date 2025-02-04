@@ -8,7 +8,7 @@ import random
 mc = minecraft.Minecraft.create("localhost")
 
 lista_insultos = ["BOBO", "ZOQUETE", "GILIPOLLAS", "INEPTO", "MONONEURONAL", "RETRASADO"]
-
+longitud = 0
 # Función para añadir un insulto a la lista global
 def add_insulto(insulto):
     if insulto not in lista_insultos:
@@ -37,7 +37,23 @@ def print_lista_insultos():
         i += 1
     return i # Devuelve el numero de insultos impresos 
 
+def print_insultos_longitud():
+    mc.postToChat("Elige longiud de insultos:")
+    longitud = int(Lectura_chat())
+    lista_insultos2 = list(filter(lambda x: len(x) <= longitud, lista_insultos))
+    i=0
+    for posicion in lista_insultos2:
+        mc.postToChat("%s" %posicion)
+        i += 1
+    return i # Devuelve el numero de insultos impresos 
 
+def print_tabla_minusculas():
+    lista_minusculas = list(map(lambda x: x.lower(), lista_insultos))
+    i=0
+    for posicion in lista_minusculas:
+        mc.postToChat("%s" %posicion)
+        i += 1
+    return i # Devuelve el numero de insultos impresos 
 #
 # Leer chat para almacenar insulto
 # insultar a (mostrar lista de entidades y que elija)
@@ -62,8 +78,13 @@ def insult_bot():
             
         if valor == 3:
             print_lista_insultos()
-        
+
         if valor == 4:
+            print_insultos_longitud()
+
+        if valor == 5:
+            print_tabla_minusculas()
+
+        if valor == 6:
             trobat = True
-        
         
